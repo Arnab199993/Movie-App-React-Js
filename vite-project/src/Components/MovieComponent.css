@@ -1,0 +1,29 @@
+.MovieContainer{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    width: 280px;
+    box-shadow: 0 3px 10px 0 #aaa;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-left: 30px;
+    gap: 24px;
+}
+.Coverimage{
+    height:140px;
+    object-fit: cover;
+}
+.MovieName{
+    font-size: 18px;
+    font-weight: 600;
+    color:black;
+    margin:15px 0;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.column{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
