@@ -4,7 +4,8 @@ import './App.css'
 import MovieComponent from './Components/MovieComponent'
 import axios from 'axios'
 import MlList from './Components/MlList'
-import Info from './Components/Info'
+import Info from "./Components/Info"
+
 const API_KEY = "d737904a"
 function App() {
 
@@ -12,8 +13,7 @@ function App() {
   const [timeoutId, updateTimeoutId] = useState();
   const [search, setsearch] = useState()
   const [movielist, setmovielist] = useState([])
-  const [selectedmovie, setselectedmovie] = useState()
-
+  const [select, onMovieselect] = useState()
 
   const fetchData = async (searchString) => {
     const response = await axios.get(
@@ -34,19 +34,17 @@ function App() {
     <div className="App" >
       <div className='div'>
 
-        <input style={{ boxSizing: "border-box", width: "800px", height: "44px", marginLeft: "24px", marginTop: "24px", background: "#rgba(255, 255, 255, 0.06)", border: "1px solid rgba(0, 0, 0, 0.26)", borderRadius: "5px" }} onChange={change} type={"text"} className={"text"} placeholder={"Search Movie"} value={search}></input>
-        <button style={{ marginLeft: "20px", padding: "10px" }} className='btn'>Button</button>
+        <input style={{ padding: "10px", boxSizing: "border-box", width: "800px", height: "44px", marginLeft: "350px", marginTop: "24px", background: "#rgba(255, 255, 255, 0.06)", border: "1px solid rgba(0, 0, 0, 0.26)", borderRadius: "5px" }} onChange={change} type={"text"} className={"text"} placeholder={"Search Movie"} value={search}></input>
+
       </div>
-      {
-        selectedmovie && <Info selectedmovie={selectedmovie} />
 
-      }
-
-      {
-        movielist.map((movie, i) => <MovieComponent key={i} movie={movie} setselectedmovie={setselectedmovie} />)
-      }
-      <MlList />
-      <Info />
+      <div className='movielistcontainer'>
+        {
+          movielist?.length ? movielist.map((movie, i) => (<MovieComponent key={i} movie={movie} />)) : <div style={{ color: "white", textAlign: "center" }}>"No Movie Search"</div>
+        }
+      </div>
+      <MlList onMovieselect={onMovieselect} />
+      {select}
     </div>
   )
 }
