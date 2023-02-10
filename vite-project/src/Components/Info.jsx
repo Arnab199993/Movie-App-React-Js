@@ -2,7 +2,7 @@ import React from 'react'
 import "./MovieComponent.css"
 import "./Info.css"
 import { useLocation } from 'react-router-dom'
-const Info = (props) => {
+const Info = () => {
     const { state } = useLocation()
     console.log(location)
     return (
@@ -10,6 +10,15 @@ const Info = (props) => {
             <h1>
                 {state.title}
             </h1>
+            <p>
+                {state.overview}
+            </p>
+            <h4>
+                {state.media_type}
+            </h4>
+            <h5>
+                {state.release_date}
+            </h5>
         </div>
     )
 }
