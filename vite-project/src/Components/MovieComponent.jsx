@@ -15,7 +15,6 @@ const MovieComponent = (props) => {
             </div>
 
 
-
         </div>
 
     )

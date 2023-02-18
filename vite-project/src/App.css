@@ -46,4 +46,5 @@ body{
   background-color: black;
   position:absolute;
   padding: 50px;
+  flex-wrap: wrap;
 }

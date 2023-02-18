@@ -20,7 +20,7 @@ const MlList = (props) => {
         <div className='row'>
             {
                 array.map((ele) => {
-                    return <Ml key={ele.id} image={ele.poster_path} title={ele.title} text={ele.release_date} overview={ele.overview} media_type={ele.media_type} release_date={ele.release_date} />
+                    return <Ml key={ele.id} image={`https://image.tmdb.org/t/p/original/${ele.poster_path}`} title={ele.title} text={ele.release_date} overview={ele.overview} media_type={ele.media_type} release_date={ele.release_date} />
                 })
             }
 
